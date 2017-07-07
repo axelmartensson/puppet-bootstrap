@@ -12,7 +12,7 @@ set -euo pipefail
 # if PUPPET_COLLECTION is not prepended with a dash "-", add it
 [[ "${PUPPET_COLLECTION}" == "" ]] || [[ "${PUPPET_COLLECTION:0:1}" == "-" ]] || \
   PUPPET_COLLECTION="-${PUPPET_COLLECTION}"
-[[ "${PUPPET_COLLECTION}" == "" ]] && PINST="puppet" || PINST="puppet-agent"
+[[ "${PUPPET_COLLECTION}" == "" ]] && PINST="puppetserver" || PINST="puppet-agent"
 
 REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release${PUPPET_COLLECTION}-${DISTRIB_CODENAME}.deb"
 
