@@ -9,10 +9,6 @@ set -xeuo pipefail
 # Load up the release information
 . /etc/lsb-release
 
-# if PUPPET_COLLECTION is not prepended with a dash "-", add it
-[[ "${PUPPET_COLLECTION}" == "" ]] || [[ "${PUPPET_COLLECTION:0:1}" == "-" ]] || \
-  PUPPET_COLLECTION="-${PUPPET_COLLECTION}"
-
 REPO_DEB_URL="http://apt.puppetlabs.com/${PUPPET_COLLECTION}-release-${DISTRIB_CODENAME}.deb"
 
 #--------------------------------------------------------------------
