@@ -4,7 +4,7 @@
 #
 # To try puppet 4 -->  PUPPET_COLLECTION=pc1 ./ubuntu.sh
 #
-set -e
+set -euo pipefail
 
 # Load up the release information
 . /etc/lsb-release
