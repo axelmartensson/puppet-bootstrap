@@ -13,7 +13,7 @@ set -xeuo pipefail
 [[ "${PUPPET_COLLECTION}" == "" ]] || [[ "${PUPPET_COLLECTION:0:1}" == "-" ]] || \
   PUPPET_COLLECTION="-${PUPPET_COLLECTION}"
 
-REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release${PUPPET_COLLECTION}-${DISTRIB_CODENAME}.deb"
+REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs${PUPPET_COLLECTION}-release-${DISTRIB_CODENAME}.deb"
 
 #--------------------------------------------------------------------
 # NO TUNABLES BELOW THIS POINT
