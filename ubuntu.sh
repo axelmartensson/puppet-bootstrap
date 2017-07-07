@@ -12,7 +12,6 @@ set -euo pipefail
 # if PUPPET_COLLECTION is not prepended with a dash "-", add it
 [[ "${PUPPET_COLLECTION}" == "" ]] || [[ "${PUPPET_COLLECTION:0:1}" == "-" ]] || \
   PUPPET_COLLECTION="-${PUPPET_COLLECTION}"
-[[ "${PUPPET_COLLECTION}" == "" ]] && PINST="puppetserver" || PINST="puppet-agent"
 
 REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release${PUPPET_COLLECTION}-${DISTRIB_CODENAME}.deb"
 
@@ -46,7 +45,7 @@ apt-get update >/dev/null
 
 # Install Puppet
 echo "Installing Puppet..."
-DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ${PINST} >/dev/null
+DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ${PINST} # what are confdef and confold?
 
 echo "Puppet installed!"
 
